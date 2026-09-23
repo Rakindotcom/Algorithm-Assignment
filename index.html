@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1120">
+  <meta name="description" content="LifeFlow — Optimal Blood Supply Distribution and Emergency Hospital Allocation System using Algorithmic Optimization (CSE 4403).">
+  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="LifeFlow home">
+      <span class="brand-mark" aria-hidden="true">✚</span>
+      <span>LifeFlow<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a class="active" href="#architecture">Architecture</a>
+      <a href="#algorithms">Algorithms &amp; Data Structures</a>
+      <a href="#cep-criteria">Washington Accord (P1–P7)</a>
+      <a href="#simulation">Live Simulation</a>
+      <a href="#dispatch-plan">Delivery Plan</a>
+      <a href="#compatibility">Blood Matching</a>
+    </nav>
+    <div class="system-status">
+      <span class="status-pulse"></span>
+      <span>System Active</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">CSE 4403 · ALGORITHMIC OPTIMIZATION PROJECT</div>
+        <h1>Intelligent Blood Supply Distribution &amp; Emergency Hospital Allocation</h1>
+        <p class="hero-description">
+          When life-threatening emergencies strike, hospitals urgently need compatible blood. 
+          However, donor stock is scarce, blood products have strict expiry dates, and city traffic causes unpredictable delivery delays. 
+          <strong>LifeFlow</strong> is an integrated decision engine combining five fundamental algorithmic paradigms to coordinate city-wide blood logistics.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#architecture">Solution Architecture <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="#simulation">Live City Simulation <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="https://youtu.be/Dga3CE_XnTI" target="_blank" rel="noopener noreferrer">Watch Project Video <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-overview-card">
+        <div class="overview-header">
+          <span class="overview-pill">COMPLEX ENGINEERING PROBLEM (CEP)</span>
+          <h3>Algorithmic Decision Engine</h3>
+        </div>
+        
+        <div class="overview-grid">
+          <div class="overview-item">
+            <span class="overview-num">5</span>
+            <div class="overview-text">
+              <strong>Interconnected Paradigms</strong>
+              <span>MergeSort, Dijkstra, Greedy Triage, 0/1 Knapsack DP, &amp; Edmonds-Karp Max-Flow</span>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <span class="overview-num">3 &rarr; 4</span>
+            <div class="overview-text">
+              <strong>Network Infrastructure Scale</strong>
+              <span>3 Central Blood Banks supplying 4 Emergency Hospitals across 12 road corridors</span>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <span class="overview-num">ABO±</span>
+            <div class="overview-text">
+              <strong>Clinical &amp; Perishability Bounds</strong>
+              <span>8-phenotype donor compatibility &amp; 35-day shelf-life near-expiry prioritization</span>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <span class="overview-num">G(V,E)</span>
+            <div class="overview-text">
+              <strong>Dynamic Urban Traffic Adaptation</strong>
+              <span>Live road congestion travel times, cold-chain vehicle fleet limits, &amp; automated detours</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="overview-footer">
+          <span class="footer-tag">✓ Objective: Zero Avoidable Wastage · Minimized Resuscitation Latency</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: Solution Architecture -->
+    <section class="section-shell bg-alt" id="architecture">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">SYSTEM PIPELINE · ARCHITECTURE</div>
+          <h2>Solution Architecture: The Integrated Pipeline</h2>
+        </div>
+        <p>
+          The system architecture connects the five algorithmic components into a dependent decision pipeline. 
+          Each stage transforms inputs and establishes constraints for subsequent stages.
+        </p>
+      </div>
+
+      <div class="architecture-diagram-card">
+        <div class="pipeline-stages-flow">
+          <div class="arch-stage">
+            <span class="stage-index">STAGE 1</span>
+            <h4>MergeSort</h4>
+            <div class="arch-tag">Request Prioritization</div>
+            <p>Ranks incoming requests by clinical urgency, severity, wait time, and blood rarity.</p>
+            <div class="arch-io">
+              <small><strong>In:</strong> Unsorted Request Stream</small>
+              <small><strong>Out:</strong> Stable Priority Queue</small>
+            </div>
+          </div>
+          <div class="arch-arrow">&rarr;</div>
+
+          <div class="arch-stage">
+            <span class="stage-index">STAGE 2</span>
+            <h4>Greedy Triage</h4>
+            <div class="arch-tag">Emergency Fast-Track</div>
+            <p>Immediately commits nearest compatible blood to crashing patients in hemorrhagic shock.</p>
+            <div class="arch-io">
+              <small><strong>In:</strong> Priority Queue &amp; Banks</small>
+              <small><strong>Out:</strong> Instant Dispatches</small>
+            </div>
+          </div>
+          <div class="arch-arrow">&rarr;</div>
+
+          <div class="arch-stage">
+            <span class="stage-index">STAGE 3</span>
+            <h4>Knapsack DP</h4>
+            <div class="arch-tag">Global Stock Allocation</div>
+            <p>Finds the highest-utility distribution under stock limits, prioritizing near-expiry units.</p>
+            <div class="arch-io">
+              <small><strong>In:</strong> Remaining Queue &amp; Fleet</small>
+              <small><strong>Out:</strong> Optimal Planned Units</small>
+            </div>
+          </div>
+          <div class="arch-arrow">&rarr;</div>
+
+          <div class="arch-stage">
+            <span class="stage-index">STAGE 4</span>
+            <h4>Edmonds-Karp</h4>
+            <div class="arch-tag">Capacity Verification</div>
+            <p>Validates physical road corridors and vehicle throughput via BFS augmenting paths.</p>
+            <div class="arch-io">
+              <small><strong>In:</strong> Planned Units &amp; Road Arcs</small>
+              <small><strong>Out:</strong> Capacity-Verified Flow</small>
+            </div>
+          </div>
+          <div class="arch-arrow">&rarr;</div>
+
+          <div class="arch-stage">
+            <span class="stage-index">STAGE 5</span>
+            <h4>Dijkstra</h4>
+            <div class="arch-tag">Dynamic Route Delivery</div>
+            <p>Computes fastest delivery routes under active traffic and computes independent backup detours.</p>
+            <div class="arch-io">
+              <small><strong>In:</strong> Weighted Road Graph</small>
+              <small><strong>Out:</strong> Final Route Plans &amp; ETAs</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Step-by-Step Pipeline Controller -->
+        <div class="pipeline-stepper-card">
+          <div class="stepper-top-bar">
+            <div class="stepper-info">
+              <span class="stepper-badge" id="pipelineStageNumber">Stage 0 / 6</span>
+              <h3 id="pipelineStageTitle">Raw Incoming Requests</h3>
+              <p id="pipelineStageDesc">Unordered real-time emergency requests arriving from city hospitals with varying severities and waiting times.</p>
+            </div>
+            <div class="stepper-controls">
+              <button class="stepper-ctrl-btn" id="stepBackBtn" type="button" title="Previous Stage">&larr; Prev Stage</button>
+              <button class="stepper-ctrl-btn" id="stepForwardBtn" type="button" title="Next Stage">Next Stage &rarr;</button>
+            </div>
+          </div>
+          <div class="stepper-nav-bar" role="tablist" aria-label="Pipeline Stages">
+            <button class="stepper-btn active" type="button"><span>0</span> Initial Inputs</button>
+            <button class="stepper-btn" type="button"><span>1</span> MergeSort Queue</button>
+            <button class="stepper-btn" type="button"><span>2</span> Dijkstra SSSP</button>
+            <button class="stepper-btn" type="button"><span>3</span> Greedy Triage</button>
+            <button class="stepper-btn" type="button"><span>4</span> Knapsack DP</button>
+            <button class="stepper-btn" type="button"><span>5</span> Edmonds-Karp</button>
+            <button class="stepper-btn" type="button"><span>6</span> Delivery Plan</button>
+          </div>
+        </div>
+
+        <div class="arch-interdependence-note">
+          <strong>Architecture Interdependence:</strong> A traffic jam changes delivery ETA (Dijkstra) &rarr; change in ETA alters request priority (MergeSort) &rarr; priority shifts inventory allocation (DP) &rarr; allocation changes residual corridor capacity (Edmonds-Karp). The entire decision pipeline continuously adapts to live conditions.
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: Algorithms & Data Structures -->
+    <section class="section-shell" id="algorithms">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">CORE ALGORITHMIC PARADIGMS</div>
+          <h2>Algorithms &amp; Data Structures Detailed Breakdown</h2>
+        </div>
+        <p>
+          A comprehensive explanation of each algorithmic component, detailing the core theoretical concept, the specific data structures employed, its role in the blood supply system, and an interactive demonstration.
+        </p>
+      </div>
+
+      <!-- Algorithm Navigation Tabs -->
+      <div class="algo-tabs" role="tablist" aria-label="Algorithm Deep Dive Tabs">
+        <button class="algo-tab-btn active" data-tab="mergesort" role="tab">
+          <strong>1. MergeSort</strong>
+          <small>Priority Queue &amp; Fairness</small>
+        </button>
+        <button class="algo-tab-btn" data-tab="dijkstra" role="tab">
+          <strong>2. Dijkstra's Algorithm</strong>
+          <small>Dynamic Route Optimization</small>
+        </button>
+        <button class="algo-tab-btn" data-tab="greedy" role="tab">
+          <strong>3. Greedy Dispatch</strong>
+          <small>Critical Emergency Triage</small>
+        </button>
+        <button class="algo-tab-btn" data-tab="knapsack" role="tab">
+          <strong>4. Dynamic Programming</strong>
+          <small>0/1 Knapsack Stock Allocation</small>
+        </button>
+        <button class="algo-tab-btn" data-tab="maxflow" role="tab">
+          <strong>5. Edmonds-Karp</strong>
+          <small>Max-Flow Capacity Verification</small>
+        </button>
+      </div>
+
+      <!-- ALGORITHM 1: MERGESORT -->
+      <div class="algo-panel active" id="panel-mergesort" role="tabpanel">
+        <div class="algo-header">
+          <div>
+            <h3>MergeSort: Stable Priority Queue &amp; Patient Fairness</h3>
+            <span class="complexity-badge">Time: O(n log n) | Space: O(n)</span>
+          </div>
+          <div class="ds-badge">Data Structure: Dynamic Array / FIFO Priority Buffer</div>
+        </div>
+
+        <div class="algo-explanation-grid">
+          <div class="info-card">
+            <h4>1. Algorithm &amp; Data Structure</h4>
+            <p>
+              MergeSort is a divide-and-conquer sorting algorithm. It recursively divides an array of requests into halves until arrays of size 1 remain, then merges them in sorted order.
+              <strong>Data Structure:</strong> A dynamic array with an auxiliary merge buffer. The comparison operator preserves stability ($\le$), ensuring that identical keys retain their initial arrival sequence.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>2. System Implementation &amp; Use Case</h4>
+            <p>
+              In mass-casualty emergencies, simultaneous requests arrive from multiple hospitals. MergeSort ranks requests using a multi-factor medical composite score:
+              <code>Score = W_urgency + (5.5 × Severity) + (0.55 × min(WaitTime, 90)) + W_rarity</code>
+              <strong>Fairness Guarantee:</strong> Stability guarantees First-Come, First-Served fairness so that earlier-waiting patients are never starved of care by tie-breaking arbitrariness.
+            </p>
+          </div>
+        </div>
+
+        <div class="demo-box">
+          <div class="demo-header">
+            <h4>Live Demonstration: Stably Ranked Request Queue</h4>
+            <span class="demo-note">Sorted by Composite Priority Score using MergeSort</span>
+          </div>
+          <div class="table-wrap">
+            <table class="algo-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Request ID</th>
+                  <th>Hospital</th>
+                  <th>Blood Type</th>
+                  <th>Urgency Wt</th>
+                  <th>Severity (×5.5)</th>
+                  <th>Wait Time (×0.55)</th>
+                  <th>Rarity Bonus</th>
+                  <th>Priority Score</th>
+                </tr>
+              </thead>
+              <tbody id="labQueueBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALGORITHM 2: DIJKSTRA -->
+      <div class="algo-panel" id="panel-dijkstra" role="tabpanel">
+        <div class="algo-header">
+          <div>
+            <h3>Dijkstra's Algorithm: Dynamic Travel Time vs. Physical Distance</h3>
+            <span class="complexity-badge">Time: O((V + E) log V) | Space: O(V + E)</span>
+          </div>
+          <div class="ds-badge">Data Structures: Binary Min-Heap &amp; Adjacency List</div>
+        </div>
+
+        <div class="algo-explanation-grid">
+          <div class="info-card">
+            <h4>1. Algorithm &amp; Data Structure</h4>
+            <p>
+              Dijkstra’s algorithm finds the shortest path on a weighted graph $G(V, E)$ with non-negative edge weights. 
+              <strong>Data Structures:</strong> An <strong>Adjacency List</strong> representing intersections and road segments, paired with a <strong>Binary Min-Heap Priority Queue</strong> to extract the tentative minimum distance node in $O(\log V)$ time.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>2. System Implementation &amp; Use Case</h4>
+            <p>
+              Traditional GPS routing often targets minimum physical distance (kilometers). In emergency blood delivery, <strong>minutes matter directly for patient survival</strong>. 
+              Our system weights edges by dynamic travel time under live traffic. If an accident or road closure occurs, Dijkstra instantly relaxes alternative edges and reroutes vehicles through safe corridors.
+            </p>
+          </div>
+        </div>
+
+        <div class="demo-box">
+          <div class="demo-header">
+            <h4>Live Demonstration: Travel Time vs. Physical Distance Routing</h4>
+            <span class="demo-note">Comparing Route Corridors from Central Bank (B2) to Mercy Hospital (H2)</span>
+          </div>
+          <div id="dijkstraLabContent"></div>
+        </div>
+      </div>
+
+      <!-- ALGORITHM 3: GREEDY DISPATCH -->
+      <div class="algo-panel" id="panel-greedy" role="tabpanel">
+        <div class="algo-header">
+          <div>
+            <h3>Greedy Selection: Instant Dispatch for Crashing Emergency Cases</h3>
+            <span class="complexity-badge">Time: O(n) | Space: O(1)</span>
+          </div>
+          <div class="ds-badge">Data Structure: Linear Candidate Array &amp; Direct Lookup</div>
+        </div>
+
+        <div class="algo-explanation-grid">
+          <div class="info-card">
+            <h4>1. Algorithm &amp; Data Structure</h4>
+            <p>
+              A greedy algorithm makes the locally optimal choice at each decision stage without backtracking. 
+              <strong>Data Structure:</strong> Evaluates candidates in a linear array, matching nearest available stock directly in $O(n)$ time.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>2. System Implementation &amp; Use Case</h4>
+            <p>
+              When a patient is in acute hemorrhagic shock (Level 10 Critical), waiting for a comprehensive multi-variable batch optimization cycle increases mortality risk. 
+              The greedy algorithm acts as an <strong>emergency triage bypass</strong>: it immediately commits the nearest available compatible blood unit to the crashing patient within milliseconds.
+            </p>
+          </div>
+        </div>
+
+        <div class="demo-box">
+          <div class="demo-header">
+            <h4>Live Demonstration: Instant Triage vs. Batch Optimization</h4>
+          </div>
+          <div class="triage-comparison-grid">
+            <div class="triage-card primary">
+              <div class="triage-badge">CRITICAL TRIAGE BYPASS (GREEDY)</div>
+              <h4>Immediate Life-Saving First Response</h4>
+              <ul>
+                <li><strong>Execution Latency:</strong> Instantaneous (&lt; 1 millisecond)</li>
+                <li><strong>Algorithm:</strong> Greedy Selection O(n)</li>
+                <li><strong>Clinical Objective:</strong> Prevent immediate hemorrhagic death</li>
+                <li><strong>Strategy:</strong> Nearest compatible blood unit is dispatched immediately without waiting</li>
+              </ul>
+            </div>
+            <div class="triage-card">
+              <div class="triage-badge badge-neutral">GLOBAL BATCH OPTIMIZER</div>
+              <h4>System-Wide Multi-Hospital Balancing</h4>
+              <ul>
+                <li><strong>Execution Latency:</strong> Scheduled batch run</li>
+                <li><strong>Algorithm:</strong> Dynamic Programming + Max-Flow</li>
+                <li><strong>Clinical Objective:</strong> Maximize overall city-wide survival and prevent blood wastage</li>
+                <li><strong>Strategy:</strong> Coordinates supply among competing routine and urgent hospital demands</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALGORITHM 4: DYNAMIC PROGRAMMING -->
+      <div class="algo-panel" id="panel-knapsack" role="tabpanel">
+        <div class="algo-header">
+          <div>
+            <h3>Dynamic Programming: 0/1 Knapsack Stock Allocation</h3>
+            <span class="complexity-badge">Time: O(N × W) | Space: O(N × W)</span>
+          </div>
+          <div class="ds-badge">Data Structure: 2D State Matrix (Memoization Table)</div>
+        </div>
+
+        <div class="algo-explanation-grid">
+          <div class="info-card">
+            <h4>1. Algorithm &amp; Data Structure</h4>
+            <p>
+              Dynamic Programming breaks an optimization problem into overlapping subproblems, recording optimal solutions in a table. 
+              <strong>Data Structure:</strong> A <strong>2D State Matrix</strong> of dimensions $(N + 1) \times (W + 1)$, where $dp[i][w] = \max(dp[i-1][w], dp[i-1][w - \text{weight}_i] + \text{value}_i)$, paired with a backtracking array to reconstruct the selected set.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>2. System Implementation &amp; Use Case</h4>
+            <p>
+              Blood bank inventory and cold-chain vehicle fleet capacity are limited resources ($W$). Competing hospitals require different units and blood types ($w_i$), carrying varied clinical benefits ($v_i$). 
+              Our DP algorithm maximizes total medical benefit while <strong>prioritizing near-expiry stock (within 4 days)</strong> to minimize avoidable biological wastage.
+            </p>
+          </div>
+        </div>
+
+        <div class="demo-box">
+          <div class="demo-header">
+            <h4>Live Demonstration: 2D Dynamic Programming Allocation Table</h4>
+            <span class="demo-note">Rows represent candidate hospital requests; columns represent cold-chain capacity states (W). The optimal selection trajectory is highlighted.</span>
+          </div>
+          <div id="dpMatrixContainer"></div>
+        </div>
+      </div>
+
+      <!-- ALGORITHM 5: EDMONDS-KARP MAX-FLOW -->
+      <div class="algo-panel" id="panel-maxflow" role="tabpanel">
+        <div class="algo-header">
+          <div>
+            <h3>Edmonds-Karp: Transportation Network Capacity Verification</h3>
+            <span class="complexity-badge">Time: O(V · E²) | Space: O(V + E)</span>
+          </div>
+          <div class="ds-badge">Data Structures: Residual Capacity Graph &amp; BFS Queue</div>
+        </div>
+
+        <div class="algo-explanation-grid">
+          <div class="info-card">
+            <h4>1. Algorithm &amp; Data Structure</h4>
+            <p>
+              Edmonds-Karp computes the maximum flow through a network using the Ford-Fulkerson method. 
+              <strong>Data Structures:</strong> A <strong>Residual Graph</strong> tracking remaining forward and backward capacities, coupled with a <strong>FIFO Queue</strong> to find the shortest augmenting path using Breadth-First Search (BFS).
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>2. System Implementation &amp; Use Case</h4>
+            <p>
+              An allocation might look optimal in theory, but can the physical roads and delivery vehicles physically transport that volume without causing gridlock? 
+              Edmonds-Karp verifies feasible flow across the city road network, detecting <strong>saturated bottleneck corridors</strong> and ensuring delivery plans do not exceed physical transport limits.
+            </p>
+          </div>
+        </div>
+
+        <div class="demo-box">
+          <div class="demo-header">
+            <h4>Live Demonstration: BFS Augmenting Paths &amp; Corridor Verification</h4>
+            <span class="demo-note">Shows augmenting paths found by BFS and detected physical bottlenecks</span>
+          </div>
+          <div id="maxFlowStepsContainer"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Washington Accord CEP Qualification (P1-P7) -->
+    <section class="section-shell" id="cep-criteria">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">WASHINGTON ACCORD COMPLEXITY JUSTIFICATION</div>
+          <h2>Why This Qualifies as a Complex Engineering Problem</h2>
+        </div>
+        <p>
+          Formal verification of Washington Accord criteria P1 through P7, demonstrating multi-faceted engineering complexity far beyond isolated textbook exercises.
+        </p>
+      </div>
+
+      <div class="cep-criteria-grid">
+        <div class="cep-card">
+          <div class="cep-header">
+            <span class="cep-code">P1</span>
+            <h4>Depth of Knowledge</h4>
+          </div>
+          <p>Requires advanced graph theory, network flow algorithms, 2D dynamic programming, and clinical priority modeling—not solvable by any single textbook algorithm.</p>
+        </div>
+
+        <div class="cep-card">
+          <div class="cep-header">
+            <span class="cep-code">P2</span>
+            <h4>Conflicting Requirements</h4>
+          </div>
+          <p>Must continuously balance delivery speed vs. fairness vs. expiry wastage vs. critical emergency coverage. Improving one directly degrades another.</p>
+        </div>
+
+        <div class="cep-card">
+          <div class="cep-header">
+            <span class="cep-code">P3</span>
+            <h4>Depth of Analysis</h4>
+          </div>
+          <p>Demand, supply, road congestion, blood expiry, and patient clinical severities all fluctuate dynamically in real time without obvious closed-form solutions.</p>
+        </div>
+
+        <div class="cep-card">
+          <div class="cep-header">
+            <span class="cep-code">P4</span>
+            <h4>Unfamiliarity &amp; Scope</h4>
+          </div>
+          <p>Transcends isolated classroom assignments by coupling live urban transit topology with strict biological donor-recipient compatibility and cold-chain fleets.</p>
+        </div>
+
+        <div class="cep-card">
+          <div class="cep-header">
+            <span class="cep-code">P5</span>
+            <h4>Applicable Codes &amp; Standards</h4>
+          </div>
+          <p>Incorporate clinical blood safety guidelines, refrigerated cold-chain standards, and hospital trauma response protocols into algorithmic constraints.</p>
+        </div>
+
+        <div class="cep-card">
+          <div class="cep-header">
+            <span class="cep-code">P6</span>
+            <h4>Diverse Stakeholders</h4>
+          </div>
+          <p>Resolves conflicting priorities between central blood banks, emergency room trauma surgeons, ambulance dispatchers, and health authorities.</p>
+        </div>
+
+        <div class="cep-card full-width">
+          <div class="cep-header">
+            <span class="cep-code">P7</span>
+            <h4>Interdependence of Sub-problems</h4>
+          </div>
+          <p>The 5 stages are tightly coupled: a traffic delay (Dijkstra) alters delivery ETA &rarr; changes request urgency (MergeSort) &rarr; shifts inventory utility (DP) &rarr; changes feasible bottleneck throughput (Edmonds-Karp). No component can run in isolation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Live City Simulation -->
+    <section class="section-shell bg-alt" id="simulation">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">INTERACTIVE CITY ENVIRONMENT</div>
+          <h2>Live Logistics Network Simulation</h2>
+        </div>
+        <p>
+          Observe how the decision engine responds in real-time to traffic bottlenecks, road closures, and incoming mass-casualty emergencies across the city.
+        </p>
+      </div>
+
+      <!-- Live Performance Indicators for Active Scenario -->
+      <div class="simulation-metrics-strip">
+        <div class="sim-metric-card">
+          <div class="sim-metric-header">
+            <span class="sim-metric-label">HOSPITAL UNITS DEMANDED</span>
+            <span class="sim-metric-tag text-red">Stage 1: MergeSort Queue</span>
+          </div>
+          <div class="sim-metric-val text-red" id="metricDemand">—</div>
+          <small class="sim-metric-desc">Total blood units requested by patients across all 4 hospitals</small>
+        </div>
+
+        <div class="sim-metric-card">
+          <div class="sim-metric-header">
+            <span class="sim-metric-label">SUCCESSFULLY ALLOCATED</span>
+            <span class="sim-metric-tag text-green">Stages 2-4: Triage &amp; DP</span>
+          </div>
+          <div class="sim-metric-val text-green" id="metricServed">—</div>
+          <small class="sim-metric-desc">Units committed via greedy triage &amp; verified via flow corridors</small>
+        </div>
+
+        <div class="sim-metric-card">
+          <div class="sim-metric-header">
+            <span class="sim-metric-label">AVERAGE DELIVERY TIME</span>
+            <span class="sim-metric-tag text-cyan">Stage 5: Dijkstra ETA</span>
+          </div>
+          <div class="sim-metric-val text-cyan" id="metricEta">—</div>
+          <small class="sim-metric-desc">Traffic-weighted arrival latency from banks to hospital trauma centers</small>
+        </div>
+
+        <div class="sim-metric-card">
+          <div class="sim-metric-header">
+            <span class="sim-metric-label">DEMAND FULFILLMENT RATE</span>
+            <span class="sim-metric-tag text-amber">System Coverage</span>
+          </div>
+          <div class="sim-metric-val text-amber" id="metricCoverage">—</div>
+          <small class="sim-metric-desc">Fulfillment ratio bounded by donor inventory &amp; vehicle fleets</small>
+        </div>
+      </div>
+
+      <div class="simulation-layout">
+        <!-- Interactive Controls Sidebar -->
+        <aside class="control-card">
+          <h3>Simulation Controls</h3>
+
+          <label class="field-label" for="scenarioSelect">City Operating Scenario</label>
+          <div class="select-wrap">
+            <select id="scenarioSelect">
+              <option value="baseline">Standard Weekday Demand</option>
+              <option value="closure">East Corridor Closed (Mercy Road Blocked)</option>
+              <option value="surge">Mass-Casualty Incident (Highway Crash)</option>
+            </select>
+          </div>
+          <div class="scenario-quick-pills">
+            <button type="button" class="scenario-pill-btn active" data-scenario="baseline">Standard</button>
+            <button type="button" class="scenario-pill-btn" data-scenario="closure">Corridor Block</button>
+            <button type="button" class="scenario-pill-btn" data-scenario="surge">Mass Casualty</button>
+          </div>
+
+          <div class="range-header">
+            <label class="field-label" for="vehicleCapacity">Available Delivery Fleet Capacity</label>
+            <output id="capacityOutput" for="vehicleCapacity">30 units</output>
+          </div>
+          <input id="vehicleCapacity" type="range" min="16" max="50" step="1" value="30">
+          <small class="field-hint">Maximum cold-chain transport capacity across all blood banks.</small>
+
+          <label class="toggle-row">
+            <span>
+              <strong>Emergency Fast-Track Triage</strong>
+              <small>Immediate dispatch for critical, life-threatening cases</small>
+            </span>
+            <input id="emergencyToggle" type="checkbox" checked>
+            <span class="toggle" aria-hidden="true"></span>
+          </label>
+
+          <div class="action-buttons">
+            <button class="button button-primary button-full" id="runButton" type="button">
+              Recalculate Optimization Engine <span aria-hidden="true">→</span>
+            </button>
+            <button class="button button-secondary button-full" id="closureButton" type="button">
+              Simulate J2–Mercy Road Closure
+            </button>
+            <button class="button button-secondary button-full" id="emergencyButton" type="button">
+              + Inject O− Critical Trauma Request
+            </button>
+          </div>
+        </aside>
+
+        <!-- City Road Network Visualization -->
+        <div class="map-card">
+          <div class="map-header">
+            <div>
+              <span class="map-title">City Transportation Graph G(V, E)</span>
+              <small>Travel times shown in minutes under live traffic</small>
+            </div>
+            <div class="map-legend">
+              <span><i class="dot bank"></i> Blood Bank</span>
+              <span><i class="dot junction"></i> Road Junction</span>
+              <span><i class="dot hospital"></i> Hospital</span>
+              <span><i class="line active"></i> Active Route</span>
+            </div>
+          </div>
+          <div class="map-svg-wrap">
+            <svg id="networkGraph" viewBox="0 0 850 440" role="img" aria-label="City Road Network Graph"></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Live Delivery Plan & Outputs -->
+    <section class="section-shell" id="dispatch-plan">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">DECISION ENGINE OUTCOMES</div>
+          <h2>Final Delivery &amp; Dispatch Plan</h2>
+        </div>
+        <p>
+          The concrete logistical plan produced by the integrated pipeline: specific blood bank sources, destination hospitals, donor types, vehicle routes, and estimated arrival times.
+        </p>
+      </div>
+
+      <!-- Output Tabs -->
+      <div class="output-tab-nav" role="tablist">
+        <button class="output-tab-btn active" data-output="allocations" role="tab">1. Unit Allocations</button>
+        <button class="output-tab-btn" data-output="queue" role="tab">2. Ranked Request Queue</button>
+        <button class="output-tab-btn" data-output="routes" role="tab">3. Navigation &amp; Detour Routes</button>
+        <button class="output-tab-btn" data-output="alerts" role="tab">4. System Warnings &amp; Shortages</button>
+        <button class="output-tab-btn" data-output="proof" role="tab">5. Algorithmic Invariants Proof</button>
+      </div>
+
+      <div class="output-content">
+        <!-- Allocations Tab -->
+        <div class="output-panel active" id="out-allocations" role="tabpanel">
+          <div class="allocation-grid" id="allocationGrid"></div>
+        </div>
+
+        <!-- Ranked Request Queue Tab -->
+        <div class="output-panel" id="out-queue" role="tabpanel">
+          <div class="table-card">
+            <table class="algo-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Request ID</th>
+                  <th>Hospital</th>
+                  <th>Blood Type</th>
+                  <th>Units</th>
+                  <th>Priority Score</th>
+                  <th>Fulfillment Status</th>
+                </tr>
+              </thead>
+              <tbody id="queueBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Routes Tab -->
+        <div class="output-panel" id="out-routes" role="tabpanel">
+          <div class="route-list" id="routeList"></div>
+        </div>
+
+        <!-- Alerts Tab -->
+        <div class="output-panel" id="out-alerts" role="tabpanel">
+          <div class="alert-list" id="alertList"></div>
+        </div>
+
+        <!-- Invariant Proofs Tab -->
+        <div class="output-panel" id="out-proof" role="tabpanel">
+          <div class="proof-summary-box" id="proofSummary"></div>
+          <div class="proof-grid" id="proofGrid"></div>
+          <div class="trace-box">
+            <h4>Algorithm Pipeline Execution Trace</h4>
+            <ul id="traceList"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Red Blood Cell Compatibility Guide -->
+    <section class="section-shell bg-alt" id="compatibility">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">HARD MEDICAL CONSTRAINT</div>
+          <h2>Red Blood Cell (RBC) Compatibility Matrix</h2>
+        </div>
+        <p>
+          Blood type matching is a non-negotiable medical constraint. Safe donor-recipient compatibility rules are hard-coded into every algorithm in the system.
+        </p>
+      </div>
+
+      <div class="compat-container">
+        <div class="compat-selection">
+          <label class="field-label">Select Recipient Patient Blood Type:</label>
+          <div class="blood-type-grid" id="bloodSelector" aria-label="Recipient blood type selector"></div>
+        </div>
+        <div class="compat-result-card">
+          <span class="compat-result-title">Clinically Approved Donor Blood Types:</span>
+          <div class="compat-donors-display" id="compatibleDonors">—</div>
+          <p class="compat-result-desc">
+            Universal donor O− can be received by all patients. Patients with AB+ can safely receive red blood cells from any donor type.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic Metadata Strip -->
+    <section class="academic-strip">
+      <div class="strip-item">
+        <span>PROJECT TITLE</span>
+        <strong>Optimal Blood Supply Distribution &amp; Emergency Hospital Allocation System</strong>
+      </div>
+      <div class="strip-item">
+        <span>STUDENT INVESTIGATORS</span>
+        <strong>Rakin al Shahriar · ID: 230041208 · Section 02</strong>
+        <strong>Shaquib Wasif · ID: 230041226 · Section 02</strong>
+        <strong>Yasir Sadik · ID: 230041245 · Section 02</strong>
+      </div>
+      <div class="strip-item">
+        <span>COURSE</span>
+        <strong>CSE 4403 (Algorithms) · Department of Computer Science &amp; Engineering</strong>
+      </div>
+      <div class="strip-item">
+        <span>PROJECT VIDEO</span>
+        <strong><a href="https://youtu.be/Dga3CE_XnTI" target="_blank" rel="noopener noreferrer">Watch Presentation on YouTube ↗</a></strong>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <a class="brand footer-brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">✚</span>
+        <span>LifeFlow<span class="brand-dot">.</span></span>
+      </a>
+      <p>A Multi-Algorithmic Decision Engine for Emergency Medical Logistics (CSE 4403 Project).</p>
+      <a class="back-to-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="app.js?v=10"></script>
+</body>
+</html>
