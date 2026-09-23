@@ -1719,6 +1719,37 @@ function setupEventHandlers() {
     const answerEl = document.querySelector("#compatibleDonors");
     if (answerEl) answerEl.textContent = COMPATIBLE_DONORS["O−"].join(" · ");
   }
+
+  setupMobileNav();
+}
+
+function setupMobileNav() {
+  const toggleBtn = document.querySelector("#mobileNavToggle");
+  const topNav = document.querySelector("#topNav");
+  if (!toggleBtn || !topNav) return;
+
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = topNav.classList.toggle("open");
+    toggleBtn.classList.toggle("active", isOpen);
+    toggleBtn.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  topNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      topNav.classList.remove("open");
+      toggleBtn.classList.remove("active");
+      toggleBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (topNav.classList.contains("open") && !topNav.contains(e.target) && !toggleBtn.contains(e.target)) {
+      topNav.classList.remove("open");
+      toggleBtn.classList.remove("active");
+      toggleBtn.setAttribute("aria-expanded", "false");
+    }
+  });
 }
 
 window.addEventListener("DOMContentLoaded", () => {
